@@ -24,10 +24,8 @@ public class Main {
 
         for (Dancer d : dancers) {
             System.out.println( "\n____________________");
-            System.out.println(
-                    "Her kommer " + d.name.toUpperCase() + " med sin " + d.style + "-stil!" +
-                    ConsolStyle.RESET);
-            System.out.println(ConsolStyle.BLUE + d.toString() + ConsolStyle.RESET);
+            d.introduce();
+            d.showInfo();
             System.out.print(ConsolStyle.UNDERLINE );
             d.dance();
             System.out.print(ConsolStyle.RESET);

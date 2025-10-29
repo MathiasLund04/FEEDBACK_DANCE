@@ -16,12 +16,14 @@ public Dancer(String name,String style){
     }
 
     public void showInfo(){
-        System.out.println( "Navn: " + name );
+        System.out.println( ConsolStyle.BLUE+ "Navn: " + name );
         System.out.println( "Stil: " + style);
+        System.out.println( "Points: " + points + ConsolStyle.RESET);
     }
 
     public final void introduce(){
-    System.out.println( "Her kommer "+ name + " med sin " + style+ " Stil");
+    System.out.println( "Her kommer "+ name.toUpperCase() + " med sin " + style+ " Stil"+
+            ConsolStyle.RESET);
     }
 
     public void scoreDance(){
@@ -34,8 +36,4 @@ public Dancer(String name,String style){
         return points;
     }
 
-    @Override
-    public String toString(){
-    return ("Navn: " + name + "\nStil: " + style + "\nPoints: " + points);
-    }
 }
