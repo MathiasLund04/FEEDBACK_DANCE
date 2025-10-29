@@ -29,9 +29,9 @@ public class Main {
             System.out.println("____________________");
             if (d instanceof ElectricBoogieDancer){
              ((ElectricBoogieDancer) d).popAndLock();
+
          }
         }
-
         DanceBattle battle = new DanceBattle(dancers.get(0),dancers.get(1));
         battle.startBattle();
         DanceBattle battle2 = new DanceBattle(dancers.get(2),dancers.get(3));
@@ -44,11 +44,5 @@ public class Main {
             System.out.println("____________________");
             System.out.println(d.name + ": " + d.points);
         }
-
-
-
-
-
-
     }
 }
