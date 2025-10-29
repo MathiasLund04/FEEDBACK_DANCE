@@ -20,9 +20,7 @@ public class Main {
         dancers.add(breakDancer2);
         dancers.add(tokDancer);
 
-        System.out.println(ConsolStyle.GREEN +
-                "\n=== VELKOMMEN TIL FEEDBACK DANCE BATTLE ===" +
-                ConsolStyle.RESET);
+        System.out.println(ConsolStyle.GREEN + "\n=== VELKOMMEN TIL FEEDBACK DANCE BATTLE ===" + ConsolStyle.RESET);
 
         for (Dancer d : dancers) {
             System.out.println( "\n____________________");
