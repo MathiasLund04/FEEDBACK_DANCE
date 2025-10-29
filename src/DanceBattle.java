@@ -16,14 +16,14 @@ public class DanceBattle {
         b.scoreDance();
         if (a.getPoints() > b.getPoints()) {
             System.out.println(a.name + " vinder med " +(a.getPoints() - b.getPoints()) + " point!"  );
+
         } else if  (b.getPoints() > a.getPoints()) {
             System.out.println(b.name + " vinder med " + (b.getPoints() - a.getPoints()) + " point!"  );
+
         } else{
             System.out.println("Det blev uafgjort");
         }
         System.out.println("____________________\n");
-
-
     }
 
 

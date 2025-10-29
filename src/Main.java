@@ -13,7 +13,6 @@ public class Main {
         BreakDancer breakDancer2 = new BreakDancer("Raygun", "Spinning");
         TikTokDancer tokDancer = new TikTokDancer("Oliva", "trendy");
 
-
         dancers.add(dancer);
         dancers.add(ebDancer);
         dancers.add(ebDancer2);
@@ -21,28 +20,60 @@ public class Main {
         dancers.add(breakDancer2);
         dancers.add(tokDancer);
 
-        for (Dancer d : dancers) {
-            System.out.println("____________________");
-            d.introduce();
-            d.showInfo();
-            d.dance();
-            System.out.println("____________________");
-            if (d instanceof ElectricBoogieDancer){
-             ((ElectricBoogieDancer) d).popAndLock();
+        System.out.println(ConsolStyle.GREEN +
+                "\n=== VELKOMMEN TIL FEEDBACK DANCE BATTLE ===" +
+                ConsolStyle.RESET);
 
-         }
+        for (Dancer d : dancers) {
+            System.out.println( "\n____________________");
+            System.out.println(
+                    "Her kommer " + d.name.toUpperCase() + " med sin " + d.style + "-stil!" +
+                    ConsolStyle.RESET);
+            System.out.println(ConsolStyle.BLUE + d.toString() + ConsolStyle.RESET);
+            System.out.print(ConsolStyle.UNDERLINE );
+            d.dance();
+            System.out.print(ConsolStyle.RESET);
+
+
+            if (d instanceof ElectricBoogieDancer) {
+                System.out.print(ConsolStyle.GREEN);
+                ((ElectricBoogieDancer) d).popAndLock();
+                System.out.print(ConsolStyle.RESET);
+            }
         }
-        DanceBattle battle = new DanceBattle(dancers.get(0),dancers.get(1));
-        battle.startBattle();
-        DanceBattle battle2 = new DanceBattle(dancers.get(2),dancers.get(3));
-        battle2.startBattle();
-        DanceBattle battle3 = new DanceBattle(dancers.get(4),dancers.get(5));
-        battle3.startBattle();
+
+        // Kampen
+        System.out.println(ConsolStyle.GREEN +
+                "\n=== LAD KAMPENE STARTE ===" +
+                ConsolStyle.RESET);
+
+        DanceBattle battle1 = new DanceBattle(dancers.get(0), dancers.get(1));
+        DanceBattle battle2 = new DanceBattle(dancers.get(2), dancers.get(3));
+        DanceBattle battle3 = new DanceBattle(dancers.get(4), dancers.get(5));
+
+        runBattle(battle1);
+        runBattle(battle2);
+        runBattle(battle3);
 
         dancers.sort(Comparator.comparingInt(Dancer::getPoints).reversed());
+        System.out.println(ConsolStyle.GREEN +
+                "\n=== SLUTRESULTAT ===" +
+                ConsolStyle.RESET);
+        System.out.println("------------------------------------------");
+
+        int place = 1;
         for (Dancer d : dancers) {
-            System.out.println("____________________");
-            System.out.println(d.name + ": " + d.points);
+            System.out.println(ConsolStyle.CYAN  +
+                    place++ + ". " + d.name + ConsolStyle.RESET +
+                    " (" + d.points + " point)");
         }
+        System.out.println(ConsolStyle.UNDERLINE + "\nTak fordi du så med! " + ConsolStyle.RESET);
+    }
+
+
+    private static void runBattle(DanceBattle battle) {
+        System.out.println(ConsolStyle.CYAN );
+        battle.startBattle();
+        System.out.println(ConsolStyle.RESET);
     }
 }

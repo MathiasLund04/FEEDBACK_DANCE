@@ -34,4 +34,8 @@ public Dancer(String name,String style){
         return points;
     }
 
+    @Override
+    public String toString(){
+    return ("Navn: " + name + "\nStil: " + style + "\nPoints: " + points);
+    }
 }

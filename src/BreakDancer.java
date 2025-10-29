@@ -1,5 +1,5 @@
-class BreakDancer extends Dancer {
-    BreakDancer(String name, String style) {
+public class BreakDancer extends Dancer {
+    public BreakDancer(String name, String style) {
         super(name, style);
     }
 
